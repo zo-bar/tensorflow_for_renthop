@@ -1,0 +1,14 @@
+
+Eval:{'auc': 0.87733078, 'accuracy': 0.70461911, 'loss': 0.68227494, 'global_step': 1002}   Wide_deep 181 cols, steps:1000, hu=50, Ftrl
+Eval:{'auc': 0.88446611, 'accuracy': 0.72163695, 'loss': 0.66143966, 'global_step': 2004}   Wide_deep 181 cols, steps:2000, hu=50, Ftrl
+Eval:{'auc': 0.88850689, 'accuracy': 0.7147488, 'loss': 0.64452237, 'global_step': 3006}   Wide_deep 181 cols, steps:3000, hu=50, Ftrl
+Eval:{'auc': 0.89217299, 'accuracy': 0.72893029, 'loss': 0.63846856, 'global_step': 4008}   Wide_deep 181 cols, steps:4000, hu=50, Ftrl
+Eval:{'auc': 0.89349174, 'accuracy': 0.71961105, 'loss': 0.62789518, 'global_step': 5010}   Wide_deep 181 cols, steps:5000, hu=50, Ftrl
+Eval:{'auc': 0.89562011, 'accuracy': 0.7285251, 'loss': 0.62629914, 'global_step': 6012}   Wide_deep 181 cols, steps:6000, hu=50, Ftrl
+Eval:{'auc': 0.89677328, 'accuracy': 0.72447324, 'loss': 0.61761087, 'global_step': 7014}   Wide_deep 181 cols, steps:7000, hu=50, Ftrl
+Eval:{'auc': 0.89772546, 'accuracy': 0.73298216, 'loss': 0.61793315, 'global_step': 8016}   Wide_deep 181 cols, steps:8000, hu=50, Ftrl
+Eval:{'auc': 0.89898241, 'accuracy': 0.73176664, 'loss': 0.61045742, 'global_step': 9018}   Wide_deep 181 cols, steps:9000, hu=50, Ftrl
+Eval:{'auc': 0.8989526, 'accuracy': 0.73703402, 'loss': 0.61244082, 'global_step': 10020}   Wide_deep 181 cols, steps:10000, hu=50, Ftrl
+Eval:{'auc': 0.90054846, 'accuracy': 0.73338735, 'loss': 0.60573149, 'global_step': 11022}   Wide_deep 181 cols, steps:11000, hu=50, Ftrl
+Eval:{'auc': 0.89997149, 'accuracy': 0.73703402, 'loss': 0.60807425, 'global_step': 12024}   Wide_deep 181 cols, steps:12000, hu=50, Ftrl
+Eval:{'auc': 0.90174478, 'accuracy': 0.73460293, 'loss': 0.60193682, 'global_step': 13026}   Wide_deep 181 cols, steps:13000, hu=50, Ftrl

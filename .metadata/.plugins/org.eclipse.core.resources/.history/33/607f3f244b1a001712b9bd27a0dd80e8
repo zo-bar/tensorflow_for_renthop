@@ -1,0 +1,79 @@
+'''
+Created on Apr 5, 2017
+
+@author: zoya
+'''
+import os
+import pandas
+import tensorflow as tf
+import pandas as pd
+import tempfile
+
+TRAIN_DF = 'train_184.csv'
+TEST_DF = 'test_183.csv'
+
+LABEL_COLUMN = "out"
+CATEGORICAL_COLUMNS = ['building_id', 'manager_id', 'street_address', 
+                       "display_address", 'display_address_cleaned'] #, 'listing_id'
+CONTINUOUS_COLUMNS = ['price', 'price_ratio', 'mean_bed_price']
+
+def input_fn(df):
+    df[CATEGORICAL_COLUMNS] = df[CATEGORICAL_COLUMNS].fillna('')
+    
+    # Creates a dictionary mapping from each continuous feature column name (k) to
+    # the values of that column stored in a constant Tensor.
+    continuous_cols = {k: tf.constant(df[k].values)
+                     for k in CONTINUOUS_COLUMNS}
+    # Creates a dictionary mapping from each categorical feature column name (k)
+    # to the values of that column stored in a tf.SparseTensor.
+    categorical_cols = {k: tf.SparseTensor(
+                                           indices=[[i, 0] for i in range(df[k].size)],
+                                           values=df[k].values,
+                                           dense_shape=[df[k].size, 1])
+                        for k in CATEGORICAL_COLUMNS}
+    
+    # Merges the two dictionaries into one.
+    feature_cols = continuous_cols
+    feature_cols.update(categorical_cols)
+    
+    # Converts the label column into a constant Tensor.
+    label = tf.constant(df[LABEL_COLUMN].values)
+    # Returns the feature columns and the label.
+    return feature_cols, label
+
+def main():
+    df_train = pandas.read_csv(TRAIN_DF)
+    df_test = pandas.read_csv(TEST_DF)
+    df_test[LABEL_COLUMN] = 0
+    
+    CONTINUOUS_COLUMNS = list(set(df_train.columns.values[1:200]) - set(CATEGORICAL_COLUMNS))
+    
+    deep_columns = list()
+    for c in CONTINUOUS_COLUMNS:
+        deep_columns.append(tf.contrib.layers.real_valued_column(c, dimension=3))
+    
+    wide_columns = list()
+    for col in CATEGORICAL_COLUMNS:
+        col_tensor = tf.contrib.layers.sparse_column_with_hash_bucket(col, hash_bucket_size=100)
+        wide_columns.append(col_tensor)
+    
+    model_dir = tempfile.mkdtemp()
+    classifier = tf.contrib.learn.DNNLinearCombinedClassifier(
+        model_dir=model_dir,
+        linear_feature_columns=wide_columns,
+        dnn_feature_columns=deep_columns,
+        dnn_hidden_units=[100, 50],
+        n_classes=3)
+        
+    classifier.fit(input_fn=lambda: input_fn(df_train), steps=2000)
+    
+    test_pred_prob = classifier.predict_proba(input_fn=lambda: input_fn(df_test))
+    out_df = pd.DataFrame([list(p) for p in test_pred_prob])
+    out_df.columns = ["low", "medium", "high"]
+    out_df["listing_id"] = df_test.listing_id.values
+    out_df.to_csv("wide_deep_nn.csv", index=False)
+
+if __name__ == "__main__":
+    os.chdir('/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/')
+    tf.logging.set_verbosity(tf.logging.INFO)
+    main()

@@ -1,0 +1,76 @@
+'''
+Created on Apr 4, 2017
+
+@author: zoya
+'''
+import os
+import pandas
+from sklearn.preprocessing import LabelEncoder
+import numpy as np
+import tensorflow as tf
+from tensorflow.contrib import learn
+
+
+TRAIN_DF = 'train_184.csv'
+TEST_DF = 'test_183.csv'
+
+LABEL_COLUMN = "out"
+CATEGORICAL_COLUMNS = ['building_id', 'manager_id', 'listing_id', 'street_address', "display_address", 'display_address_cleaned']
+CONTINUOUS_COLUMNS = ['price', 'price_ratio', 'mean_bed_price']
+
+
+def input_fn(df):
+    # Creates a dictionary mapping from each continuous feature column name (k) to
+    # the values of that column stored in a constant Tensor.
+    continuous_cols = {k: tf.constant(df[k].values)
+                     for k in CONTINUOUS_COLUMNS}
+    feature_cols = continuous_cols
+    
+    # Converts the label column into a constant Tensor.
+    label = tf.constant(df[LABEL_COLUMN].values)
+    # Returns the feature columns and the label.
+    return feature_cols, label
+
+def train_input_fn():
+    df_train = pandas.read_csv(TRAIN_DF)[0:49000]
+    return input_fn(df_train)
+
+def eval_input_fn():
+    df_train = pandas.read_csv(TRAIN_DF)[49001:49352]
+    return input_fn(df_train)
+
+def test_input_fn():
+    df_test = pandas.read_csv(TEST_DF)
+    df_test[LABEL_COLUMN] = 0
+    return input_fn(df_test)
+
+def main():
+    for c in CONTINUOUS_COLUMNS:
+        feature_columns = [tf.contrib.layers.real_valued_column(c, dimension=3)]
+    
+    # Build 3 layer DNN with 10, 20, 10 units respectively.
+    classifier = tf.contrib.learn.DNNClassifier(feature_columns=feature_columns,
+                                                hidden_units=[5, 10, 5],
+                                                n_classes=3,
+                                                model_dir="/tmp/renthop_model_simple1")
+    
+    # Fit model.
+    classifier.fit(input_fn=train_input_fn, steps=2000)
+    p = classifier.evaluate(input_fn=eval_input_fn, steps=1)
+    print (p)
+    
+    # predictions = list(classifier.predict(input_fn=eval_input_fn))
+    df_train = pandas.read_csv(TRAIN_DF)
+    eval_len = 100
+    pred_prob = list(classifier.predict_proba(input_fn=lambda: input_fn(df_train[49001:(49001+eval_len)])))
+    vals = list(df_train[49001:(49001+eval_len)][LABEL_COLUMN])
+    mlogloss = 0
+    for i in range(0, eval_len):
+        mlogloss = mlogloss + pred_prob[i][vals[i]]
+    mlogloss = mlogloss / eval_len
+    
+        
+if __name__ == "__main__":
+    os.chdir('/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/')
+    tf.logging.set_verbosity(tf.logging.INFO)
+    main()

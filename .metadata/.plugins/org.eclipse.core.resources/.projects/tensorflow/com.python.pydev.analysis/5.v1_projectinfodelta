@@ -1,0 +1,12 @@
+INSTUPcom.zoya.tf.renthop.wide_deep_cleaned_features
+/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/wide_deep_cleaned_features.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&2|8|2|0&&2|9|2|0
+BAD_BEHAVING_COLUMNS=7
+DNN_CONT_COLUMNS=6
+input_fn=8
+main=9
+LABEL_COLUMN=4
+com.zoya.tf.renthop.wide_deep_cleaned_features=2
+TEST_DF=3
+TRAIN_DF=1
+LINEAR_CAT_COLUMNS=5

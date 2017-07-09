@@ -1,0 +1,9 @@
+
+Eval:{'loss': 0.65460509, 'accuracy': 0.71515399, 'auc': 0.88552487, 'global_step': 1000}   Linear 181 cols, steps:1000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.63275492, 'accuracy': 0.71839547, 'auc': 0.89192772, 'global_step': 2000}   Linear 181 cols, steps:2000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.62030447, 'accuracy': 0.72001618, 'auc': 0.89635164, 'global_step': 3000}   Linear 181 cols, steps:3000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.61122251, 'accuracy': 0.72690439, 'auc': 0.89927793, 'global_step': 4000}   Linear 181 cols, steps:4000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.60422695, 'accuracy': 0.72811991, 'auc': 0.90153247, 'global_step': 5000}   Linear 181 cols, steps:5000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.59868276, 'accuracy': 0.73176664, 'auc': 0.90320331, 'global_step': 6000}   Linear 181 cols, steps:6000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.59415239, 'accuracy': 0.73703402, 'auc': 0.90461385, 'global_step': 7000}   Linear 181 cols, steps:7000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9
+Eval:{'loss': 0.59043914, 'accuracy': 0.7402755, 'auc': 0.90571791, 'global_step': 8000}   Linear 181 cols, steps:8000, learning_rate=0.1, l1_regularization_strength=0.1, l2_regularization_strength=0.9

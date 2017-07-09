@@ -1,0 +1,64 @@
+-- VERSION_4
+-- START DISKCACHE
+/Users/zoya/projects/datascience/tensorflow/.metadata/.plugins/org.eclipse.core.resources/.projects/tensorflow/com.python.pydev.analysis/v2_indexcache
+com.zoya.tf.examples.__init__|1490848027000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/examples/__init__.py
+com.zoya.tf.renthop.linear|1492451876000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/linear.py
+com.zoya.tf.renthop.trash|1491083676000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/trash.py
+com.__init__|1490823917000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/__init__.py
+com.zoya.tf.examples.mnist_expert|1491094537000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/examples/mnist_expert.py
+com.zoya.tf.renthop.second_nn|1491613209000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/second_nn.py
+com.zoya.__init__|1490823917000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/__init__.py
+com.zoya.tf.__init__|1490823917000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/__init__.py
+com.zoya.tf.renthop.wide_deep_base_features|1492119940000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/wide_deep_base_features.py
+com.zoya.tf.renthop.wide_deep|1492020928000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/wide_deep.py
+com.zoya.tf.renthop.__init__|1491066419000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/__init__.py
+com.zoya.tf.renthop.wide_deep_cleaned_features|1492464536000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/wide_deep_cleaned_features.py
+com.zoya.tf.renthop.rent_hop_dnn|1492463734000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/rent_hop_dnn.py
+com.zoya.tf.renthop.widedeep_model|1492450392000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/widedeep_model.py
+com.zoya.tf.renthop.first_nn|1491416599000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/first_nn.py
+com.zoya.tf.examples.iris_learn_nn|1490849142000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/examples/iris_learn_nn.py
+com.zoya.tf.renthop.simple_nn|1491415791000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/renthop/simple_nn.py
+com.zoya.tf.examples.mnist_beginner|1490846895000|/Users/zoya/projects/datascience/tensorflow/tensorflow/com/zoya/tf/examples/mnist_beginner.py
+-- END DISKCACHE
+-- START DICTIONARY
+13
+8=com.zoya.tf.renthop.linear
+9=com.zoya.tf.renthop.trash
+4=com.zoya.tf.examples.mnist_expert
+6=com.zoya.tf.renthop.second_nn
+10=com.zoya.tf.renthop.wide_deep_base_features
+1=com.zoya.tf.renthop.wide_deep
+3=com.zoya.tf.renthop.wide_deep_cleaned_features
+2=com.zoya.tf.renthop.rent_hop_dnn
+5=com.zoya.tf.renthop.widedeep_model
+11=com.zoya.tf.renthop.first_nn
+13=com.zoya.tf.examples.iris_learn_nn
+7=com.zoya.tf.renthop.simple_nn
+12=com.zoya.tf.examples.mnist_beginner
+-- END DICTIONARY
+-- START TREE 1
+20
+bad|3|BAD_BEHAVING_COLUMNS!11@BAD_BEHAVING_COLUMNS!19@BAD_BEHAVING_COLUMNS!27@
+bia|1|bias_variable!34@
+cat|4|CATEGORICAL_COLUMNS!43@CATEGORICAL_COLUMNS!51@CATEGORICAL_COLUMNS!59@CATEGORICAL_COLUMNS!67@
+cle|1|clean_df!74@
+con|5|CONTINUOUS_COLUMNS!59@CONTINUOUS_COLUMNS!67@CONTINUOUS_COLUMNS!51@conv2d!34@CONTINUOUS_COLUMNS!43@
+dnn|5|DNN_CONT_COLUMNS!83@DNN_CONT_COLUMNS!27@DNN_CONT_COLUMNS!19@DNN_CONT_COLUMNS!11@DNN_COLUMNS!43@
+eva|1|eval_input_fn!90@
+fla|2|FLAGS!99@FLAGS!35@
+inp|9|input_fn!90@input_fn!18@input_fn!50@input_fn!82@input_fn!10@input_fn!58@input_fn!66@input_fn!26@input_fn!42@
+iri|4|IRIS_TEST!107@IRIS_TRAINING_URL!107@IRIS_TRAINING!107@IRIS_TEST_URL!107@
+lab|9|LABEL_COLUMN!83@LABEL_COLUMN!11@LABEL_COLUMN!67@LABEL_COLUMN!91@LABEL_COLUMN!43@LABEL_COLUMN!27@LABEL_COLUMN!51@LABEL_COLUMN!59@LABEL_COLUMN!19@
+lin|4|LINEAR_CAT_COLUMNS!83@LINEAR_CONT_COLUMNS!11@LINEAR_CAT_COLUMNS!11@LINEAR_CAT_COLUMNS!27@
+mai|12|main!34@main!26@main!58@main!82@main!66@main!106@main!10@main!42@main!90@main!18@main!98@main!50@
+max|1|max_pool_2x2!34@
+pan|1|pandas_input_fn!74@
+res|1|rest!67@
+tes|11|TEST_DF!51@TEST_DF!43@TEST_DF!59@TEST_DF!67@TEST_DF!27@TEST_DF!91@TEST_DF!19@test_input_fn!90@TEST_DF!75@TEST_DF!83@TEST_DF!11@
+tf_|2|TF_TRAIN_DF!75@TF_TEST_DF!75@
+tra|11|TRAIN_DF!51@train_input_fn!90@TRAIN_DF!43@TRAIN_DF!19@TRAIN_DF!27@TRAIN_DF!59@TRAIN_DF!83@TRAIN_DF!75@TRAIN_DF!11@TRAIN_DF!91@TRAIN_DF!67@
+wei|1|weight_variable!34@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
